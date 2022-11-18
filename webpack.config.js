@@ -1,4 +1,5 @@
 const path = require('path');
+// import css from "file.css";
 
 console.log(path.resolve(__dirname, './client/dist'));
 
@@ -18,20 +19,9 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              localsConvention: 'camelCase',
-              sourceMap: true
-            }
-          }
-        ]
-      }
+        exclude: /node_modules/,
+        use: ["style-loader", "css-loader"],
+      },
     ]
   },
 };

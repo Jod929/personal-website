@@ -6,8 +6,8 @@ const entry = process.env.ENTRY;
 
 app.use(express.static(entry));
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
+app.get('/new', (req, res) => {
+  res.send('its new and working')
 })
 
 app.listen(port, () => {
